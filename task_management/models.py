@@ -26,3 +26,9 @@ class Subtask(models.Model):
     
     def __str__(self):
         return self.title
+    
+
+""" class User(models.model):
+    first_name = models.CharField(max_length = 30)
+    last_name = models.CharField(max_length = 30)
+    email = User.email """

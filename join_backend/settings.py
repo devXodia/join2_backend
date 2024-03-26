@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "task_management"
+    "task_management",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ MEDIA_ROOT = '/home/devXodia/join_backend/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/devXodia/join_backend/static'
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
