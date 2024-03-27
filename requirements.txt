@@ -1,8 +1,12 @@
 asgiref==3.7.2
-Django==4.2.7
-sqlparse==0.4.4
-typing_extensions==4.8.0
 certifi==2020.12.5
 distlib==0.3.1
+Django==4.2.7
+django-filter==24.1
+djangorestframework==3.15.1
 filelock==3.0.12
+Markdown==3.6
 six==1.16.0
+sqlparse==0.4.4
+typing_extensions==4.8.0
+tzdata==2024.1
