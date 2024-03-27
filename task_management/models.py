@@ -7,6 +7,14 @@ class Task(models.Model):
     title = models.CharField(max_length = 100)
     description = models.TextField()
     due_date = models.DateField()
+    category = models.CharField(max_length=25, choices={
+        ('Media', 'Media'),
+        ('Design', 'Design'),
+        ('Customer Service', 'Customer Service'),
+        ('Backoffice', 'Backoffice'),
+        ('Marketing', 'Marketing'),
+        ('Sales', 'Sales'),
+    })
     priority = models.CharField(max_length=20, choices=[
         ('Low', 'Low'),
         ('Medium', 'Medium'),
