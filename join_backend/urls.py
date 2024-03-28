@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from task_management.views import TaskViewSet, UserCreateView, UserRetrieveView
+from task_management.views import TaskViewSet, UserCreateView, UserRetrieveView, ContactsViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = [
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewSet)
+router.register(r'contacts', ContactsViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

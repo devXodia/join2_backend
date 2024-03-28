@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Task
+from .models import Task, Contact
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -13,11 +13,17 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         return user
 
-
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email']
+
+
+class ContactDetailsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contact
+        fields = ['name', 'last_name', 'phone', 'email', 'acronym']
 
 
 class TaskSerializer(serializers.ModelSerializer):
