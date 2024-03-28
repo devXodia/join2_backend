@@ -30,7 +30,7 @@ class Contact(models.Model):
     name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 50)
     acronym = models.CharField(max_length = 3)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length = 30)
     email = models.CharField(max_length = 30)
 
 
