@@ -21,19 +21,12 @@ class Task(models.Model):
         ('High', 'High')
     ])
     assigned_contacts = models.ManyToManyField(User, related_name='assigned_tasks')
-    
+    subtasks = models.JSONField(default=None)
 
     def __str__(self):
         return self.title
     
 
-class Subtask(models.Model):
-    task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name='subtasks')
-    title = models.CharField(max_length=100)
-    completed = models.BooleanField(default=False)
-    
-    def __str__(self):
-        return self.title
     
 
 """ class User(models.model):
