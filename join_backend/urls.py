@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from task_management.views import TaskViewSet
+from task_management.views import TaskViewSet, UserCreateView, UserRetrieveView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -33,5 +33,7 @@ router.register(r'tasks', TaskViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/users/', UserCreateView.as_view(), name='user-create'),
+    path('api/users/<int:pk>/', UserRetrieveView.as_view(), name='user-detail')
 ]
